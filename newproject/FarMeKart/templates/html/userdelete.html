@@ -1,0 +1,17 @@
+{% extends 'html/header.html' %}
+{% block title %} Delete Item{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="card card-md-5 mt-5 mx-auto">
+		<div class="card-body mx-3">
+			<form method="post">
+			{% csrf_token %}
+			<h3 class="bg-secondary text-center border rounded text-light">Delete item</h3>
+			<p>Are You sure you need to Delete the item {{sd.item_name}}</p>
+			<input type="submit" value="Yes Confirm" class="btn btn-success">
+			<a href="{% url 'delete' %}" class="btn btn-danger">No</a>
+		</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
